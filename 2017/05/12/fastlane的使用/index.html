@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://blog.devzeng.com/images/ios-fastlane-in-action/fastlane-logo.png">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNbRwgy1ffivh5ki06j30wi0p4gue.jpg">
 <meta property="og:image" content="http://blog.devzeng.com/images/ios-fastlane-in-action/fastlane-init.png">
-<meta property="og:updated_time" content="2017-05-12T13:10:56.000Z">
+<meta property="og:updated_time" content="2017-05-12T13:16:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="fastlane的使用">
 <meta name="twitter:description" content="对于一个iOS APP的发布上线，一般来说都需要经历:编译打包 -&amp;gt; 截图 -&amp;gt; 填写一些说明文字 -&amp;gt; 上传ipa到itunes connect -&amp;gt; 提交供审核。每次都要进行这么多“繁琐”的步骤，对于某些步骤可能一次还不能执行成功需要等着界面提示上传错误然后手动重新再来一次。 在日常开发中，打包也是最后上线不可缺少的环节，如果需要生成ipa文件通常需要在Xcode里点击">
@@ -322,14 +322,13 @@
       
 
       
-        <p>对于一个iOS APP的发布上线，一般来说都需要经历:<br>编译打包 -&gt; 截图 -&gt; 填写一些说明文字 -&gt; 上传ipa到itunes connect -&gt; 提交供审核。<br>每次都要进行这么多“繁琐”的步骤，对于某些步骤可能一次还不能执行成功需要等着界面提示上传错误然后手动重新再来一次。</p>
+        <h4 id="对于一个iOS-APP的发布上线，一般来说都需要经历"><a href="#对于一个iOS-APP的发布上线，一般来说都需要经历" class="headerlink" title="对于一个iOS APP的发布上线，一般来说都需要经历:"></a>对于一个iOS APP的发布上线，一般来说都需要经历:</h4><p>编译打包 -&gt; 截图 -&gt; 填写一些说明文字 -&gt; 上传ipa到itunes connect -&gt; 提交供审核。<br>每次都要进行这么多“繁琐”的步骤，对于某些步骤可能一次还不能执行成功需要等着界面提示上传错误然后手动重新再来一次。</p>
 <p>在日常开发中，打包也是最后上线不可缺少的环节，如果需要生成ipa文件通常需要在Xcode里<br>点击Product -&gt; Archive，然后在弹出来的Organizer中选择导出什么类型(ad hoc/enterprise)的包。对于大项目来说动辄编译十分钟以上的来说，一天打几个包就差不多过去了。</p>
 <p>为了解决这些问题，Felix Krause大神写了一个工具集fastlane。<br>fastlane是一套使用Ruby写的自动化工具集，用于iOS和Android自动化打包和发布.</p>
 <p><img src="http://blog.devzeng.com/images/ios-fastlane-in-action/fastlane-logo.png" alt="image"></p>
-<h2 id="fastlane-的安装"><a href="#fastlane-的安装" class="headerlink" title="fastlane 的安装"></a>fastlane 的安装</h2><p>1.首先确保安装的 xcode 命令行是最新的<br>   如果尚未安装可使用下面命令安装</p>
+<h2 id="fastlane-的安装"><a href="#fastlane-的安装" class="headerlink" title="fastlane 的安装"></a>fastlane 的安装</h2><h4 id="1-首先确保安装的-xcode-命令行是最新的"><a href="#1-首先确保安装的-xcode-命令行是最新的" class="headerlink" title="1.首先确保安装的 xcode 命令行是最新的"></a>1.首先确保安装的 xcode 命令行是最新的</h4><p>   如果尚未安装可使用下面命令安装</p>
 <pre><code>xcode-select --install
-</code></pre><p> 2.安装fastlane</p>
-<pre><code>    sudo gem install fastlane
+</code></pre><h4 id="2-安装fastlane"><a href="#2-安装fastlane" class="headerlink" title="2.安装fastlane"></a>2.安装fastlane</h4><pre><code>    sudo gem install fastlane
 部分人的mac会提示
 *ERROR:  While executing gem ... (Errno::EPERM)
                Operation not permitted - /usr/bin/rougify
@@ -337,7 +336,7 @@
 </code></pre><p>  原因正如提示所说,可以使用下面的命令进行安装</p>
 <pre><code>sudo gem install -n /usr/local/bin fastlane
 </code></pre><h4 id="当出现如下一大坨时候表示安装成功了"><a href="#当出现如下一大坨时候表示安装成功了" class="headerlink" title="当出现如下一大坨时候表示安装成功了."></a>当出现如下一大坨时候表示安装成功了.</h4><p> <img src="http://ww1.sinaimg.cn/large/006tNbRwgy1ffivh5ki06j30wi0p4gue.jpg" alt=""></p>
-<p> 3.fastlane组件<br> fastlane是一个工具集，包含了我们日常开发中上线时需要的大部分操作。比如gym/deliver等。下面对每个工具进行介绍：</p>
+<h4 id="3-fastlane组件"><a href="#3-fastlane组件" class="headerlink" title="3.fastlane组件"></a>3.fastlane组件</h4><p> fastlane是一个工具集，包含了我们日常开发中上线时需要的大部分操作。比如gym/deliver等。下面对每个工具进行介绍：</p>
 <pre><code>名称    说明
 deliver    自动上传截图，APP的元数据，二进制(ipa)文件到iTunes Connect
 snapshot    自动截图（基于Xcode7的UI test）
@@ -351,7 +350,7 @@ pem    自动生成、更新推送配置文件
 gym    自动化编译打包工具
 match    证书和配置文件管理工具
 scan    自动运行测试工具，并且可以生成漂亮的HTML报告
-</code></pre><p>4.fastlane核心概念<br>在运行fastlane命令行工具的时候，会读取当前目录下面的fastlane文件夹里面的Fastfile配置文件。里面定义了一个个的lane，下面是官方提供的一个示例：</p>
+</code></pre><h4 id="4-fastlane核心概念"><a href="#4-fastlane核心概念" class="headerlink" title="4.fastlane核心概念"></a>4.fastlane核心概念</h4><p>在运行fastlane命令行工具的时候，会读取当前目录下面的fastlane文件夹里面的Fastfile配置文件。里面定义了一个个的lane，下面是官方提供的一个示例：</p>
 <pre><code>lane :beta do
 increment_build_number
 cocoapods
@@ -361,7 +360,7 @@ sh &quot;./customScript.sh&quot;
 slack
 end
 </code></pre><p>像<em>increment_build_number</em>、<em>cocoapods</em>这样的一条命令都是一个action，<br>由这样的一个个action组成了一个lane（lane中可以调用其他的lane)。</p>
-<h3 id="fastlane实战"><a href="#fastlane实战" class="headerlink" title="fastlane实战"></a>fastlane实战</h3><p>1、初始化<br>在项目的根目录下面，执行fastlane init命令开始初始化。<br>在执行的过程中会要求填写一些项目的资料，如Apple ID等，fastlane会自动检测当前目录下项目的App Name和App Identifier，可以选择自行输入这些信息。初始化完成会在当前目录下面生成一个fastlane的文件夹。</p>
+<h2 id="fastlane实战"><a href="#fastlane实战" class="headerlink" title="fastlane实战"></a>fastlane实战</h2><h4 id="1、初始化"><a href="#1、初始化" class="headerlink" title="1、初始化"></a>1、初始化</h4><p>在项目的根目录下面，执行fastlane init命令开始初始化。<br>在执行的过程中会要求填写一些项目的资料，如Apple ID等，fastlane会自动检测当前目录下项目的App Name和App Identifier，可以选择自行输入这些信息。初始化完成会在当前目录下面生成一个fastlane的文件夹。</p>
 <p><img src="http://blog.devzeng.com/images/ios-fastlane-in-action/fastlane-init.png" alt=""></p>
 <p>最重要的两个文件就是Appfile和Fastfile，主要的说明如下：</p>
 <p>（1）Appfile里面存放了App的基本信息包括app_identifier、apple_id、team_id等，如果在init的时候输入了正确的apple_id和密码会自动获取team_id。</p>
@@ -369,7 +368,7 @@ end
 <p>说明：</p>
 <p>（1）如果在init的时候选择了在iTunes Connect创建App，那么fastlane会调用produce进行初始化，如果没有创建后续可以手动执行produce init进行创建。如果没有在初始化的时候选择执行produce流程当然deliver也不会执行，后面可以使用deliver init运行是一样的。</p>
 <p>（2）在iTunes Connect中成功创建App之后，fastlane文件夹里面会生成一个Deliverfile的文件。Deliverfile文件主要是deliver的一些配置信息。</p>
-<p>2、Fastfile文件<br>Fastfile文件的主要结构如下所示：</p>
+<h4 id="2、Fastfile文件"><a href="#2、Fastfile文件" class="headerlink" title="2、Fastfile文件"></a>2、Fastfile文件</h4><p>Fastfile文件的主要结构如下所示：</p>
 <pre><code>fastlane_version &quot;2.14.2&quot;
 default_platform :ios
 
@@ -397,8 +396,7 @@ before_all do
 end
 </code></pre><p>说明：</p>
 <p>（1）fastlane_version：指定fastlane使用的最小版本<br>（2）default_platform：指定当前默认的平台，可以选择ios/android/mac<br>（3）before_all：在执行每一个lane之前都会调用这部分的内容<br>（4）after_all：在每个lane执行完成之后都会执行这部分的内容<br>（5）error：每个lane执行出错就会执行这部分的内容<br>（6）desc：对lane的描述，fastlane会自动将desc的内容生成说明文档<br>（7）lane：定义一个lane(任务)，可以理解为一个函数，我们在执行的时候使用fastlane [ios] lane名称</p>
-<p>3、Fastfile文件的编写</p>
-<pre><code>lane :release do |option|
+<h4 id="3、Fastfile文件的编写"><a href="#3、Fastfile文件的编写" class="headerlink" title="3、Fastfile文件的编写"></a>3、Fastfile文件的编写</h4><pre><code>lane :release do |option|
 #根据传入参数version设置app的版本号
 increment_version_number(version_number: option[:version])
 #自动增加build号
@@ -413,8 +411,8 @@ build = get_info_plist_value(path: &quot;./#{scheme_name}/Info.plist&quot;, key:
 output_directory = File.expand_path(&quot;..&quot;, Dir.pwd) + File::Separator + &apos;build&apos;
 output_name = &quot;#{scheme_name}_#{configuration}_#{version}_#{build}_#{Time.now.strftime(&apos;%Y%m%d%H%M%S&apos;)}.ipa&quot;
 gym(scheme: scheme_name, clean: true, export_method:&apos;appstore&apos;, configuration: configuration, output_directory: output_directory, output_name: output_name)
-</code></pre><p>  end</p>
-
+ end
+</code></pre>
       
     </div>
 
@@ -450,8 +448,8 @@ gym(scheme: scheme_name, clean: true, export_method:&apos;appstore&apos;, config
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/11/这迷雾到底怎么冲破/" rel="next" title="这迷雾到底怎么冲破">
-                <i class="fa fa-chevron-left"></i> 这迷雾到底怎么冲破
+              <a href="/2017/05/11/这迷雾到底怎么冲破/" rel="next" title="惆怅甚至于迷茫">
+                <i class="fa fa-chevron-left"></i> 惆怅甚至于迷茫
               </a>
             
           </div>
@@ -596,7 +594,7 @@ gym(scheme: scheme_name, clean: true, export_method:&apos;appstore&apos;, config
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#fastlane-的安装"><span class="nav-number">1.</span> <span class="nav-text">fastlane 的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#当出现如下一大坨时候表示安装成功了"><span class="nav-number">1.0.1.</span> <span class="nav-text">当出现如下一大坨时候表示安装成功了.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fastlane实战"><span class="nav-number">1.1.</span> <span class="nav-text">fastlane实战</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#对于一个iOS-APP的发布上线，一般来说都需要经历"><span class="nav-number">1.</span> <span class="nav-text">对于一个iOS APP的发布上线，一般来说都需要经历:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fastlane-的安装"><span class="nav-number"></span> <span class="nav-text">fastlane 的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-首先确保安装的-xcode-命令行是最新的"><span class="nav-number">1.</span> <span class="nav-text">1.首先确保安装的 xcode 命令行是最新的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装fastlane"><span class="nav-number">2.</span> <span class="nav-text">2.安装fastlane</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当出现如下一大坨时候表示安装成功了"><span class="nav-number">3.</span> <span class="nav-text">当出现如下一大坨时候表示安装成功了.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-fastlane组件"><span class="nav-number">4.</span> <span class="nav-text">3.fastlane组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-fastlane核心概念"><span class="nav-number">5.</span> <span class="nav-text">4.fastlane核心概念</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fastlane实战"><span class="nav-number"></span> <span class="nav-text">fastlane实战</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、初始化"><span class="nav-number">1.</span> <span class="nav-text">1、初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、Fastfile文件"><span class="nav-number">2.</span> <span class="nav-text">2、Fastfile文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、Fastfile文件的编写"><span class="nav-number">3.</span> <span class="nav-text">3、Fastfile文件的编写</span></a></li></ol></div>
             
 
           </div>
