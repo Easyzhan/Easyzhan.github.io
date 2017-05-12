@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-12T13:16:07.000Z</updated>
+  <updated>2017-05-12T14:22:38.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/05/12/fastlane%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2017/05/12/fastlane的使用/</id>
     <published>2017-05-12T12:41:51.000Z</published>
-    <updated>2017-05-12T13:16:07.000Z</updated>
+    <updated>2017-05-12T14:22:38.000Z</updated>
     
     <content type="html"><![CDATA[<h4 id="对于一个iOS-APP的发布上线，一般来说都需要经历"><a href="#对于一个iOS-APP的发布上线，一般来说都需要经历" class="headerlink" title="对于一个iOS APP的发布上线，一般来说都需要经历:"></a>对于一个iOS APP的发布上线，一般来说都需要经历:</h4><p>编译打包 -&gt; 截图 -&gt; 填写一些说明文字 -&gt; 上传ipa到itunes connect -&gt; 提交供审核。<br>每次都要进行这么多“繁琐”的步骤，对于某些步骤可能一次还不能执行成功需要等着界面提示上传错误然后手动重新再来一次。</p>
 <p>在日常开发中，打包也是最后上线不可缺少的环节，如果需要生成ipa文件通常需要在Xcode里<br>点击Product -&gt; Archive，然后在弹出来的Organizer中选择导出什么类型(ad hoc/enterprise)的包。对于大项目来说动辄编译十分钟以上的来说，一天打几个包就差不多过去了。</p>
@@ -120,6 +120,10 @@ gym(scheme: scheme_name, clean: true, export_method:&apos;appstore&apos;, config
     
     </summary>
     
+      <category term="开发技术" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="iOS 开发" scheme="http://yoursite.com/tags/iOS-%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -128,7 +132,7 @@ gym(scheme: scheme_name, clean: true, export_method:&apos;appstore&apos;, config
     <link href="http://yoursite.com/2017/05/11/%E8%BF%99%E8%BF%B7%E9%9B%BE%E5%88%B0%E5%BA%95%E6%80%8E%E4%B9%88%E5%86%B2%E7%A0%B4/"/>
     <id>http://yoursite.com/2017/05/11/这迷雾到底怎么冲破/</id>
     <published>2017-05-11T09:05:00.000Z</published>
-    <updated>2017-05-12T13:19:47.000Z</updated>
+    <updated>2017-05-12T14:24:19.000Z</updated>
     
     <content type="html"><![CDATA[<p>想不明白,这是不是也算一种遇人不淑</p>
 ]]></content>
@@ -140,6 +144,10 @@ gym(scheme: scheme_name, clean: true, export_method:&apos;appstore&apos;, config
     
     </summary>
     
+      <category term="意乱情迷" scheme="http://yoursite.com/categories/%E6%84%8F%E4%B9%B1%E6%83%85%E8%BF%B7/"/>
+    
+    
+      <category term="iOS 开发" scheme="http://yoursite.com/tags/iOS-%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -148,7 +156,7 @@ gym(scheme: scheme_name, clean: true, export_method:&apos;appstore&apos;, config
     <link href="http://yoursite.com/2017/05/11/%E5%AE%89%E5%BE%97%E5%B9%BF%E5%8E%A6%E5%8D%83%E4%B8%87%E9%97%B4/"/>
     <id>http://yoursite.com/2017/05/11/安得广厦千万间/</id>
     <published>2017-05-11T08:50:15.000Z</published>
-    <updated>2017-05-11T14:15:34.000Z</updated>
+    <updated>2017-05-12T14:16:08.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="这里只说与之前不同的地方-不说之前的-mobile-证书安装之类的"><a href="#这里只说与之前不同的地方-不说之前的-mobile-证书安装之类的" class="headerlink" title="这里只说与之前不同的地方,不说之前的 mobile 证书安装之类的:"></a>这里只说与之前不同的地方,不说之前的 mobile 证书安装之类的:</h3><h3 id="当你想-iOS10以下的一样设置完发现还是不能在-iOS10上抓-HTTPS-百感交集啊"><a href="#当你想-iOS10以下的一样设置完发现还是不能在-iOS10上抓-HTTPS-百感交集啊" class="headerlink" title="当你想 iOS10以下的一样设置完发现还是不能在 iOS10上抓 HTTPS 百感交集啊"></a>当你想 iOS10以下的一样设置完发现还是不能在 iOS10上抓 HTTPS 百感交集啊</h3><h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法:"></a>解决办法:</h4><pre><code>来到设置-&gt;关于本机-&gt;证书信任设置
 </code></pre><p><img src="http://ww2.sinaimg.cn/large/006tKfTcgy1ffhqmimwyxj309w0hmdgc.jpg" alt=""></p>
@@ -160,6 +168,10 @@ gym(scheme: scheme_name, clean: true, export_method:&apos;appstore&apos;, config
     
     </summary>
     
+      <category term="开发技术" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="iOS 开发" scheme="http://yoursite.com/tags/iOS-%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   

@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS 开发," />
 
 
 
@@ -93,19 +93,18 @@
 
 
 <meta name="description" content="对于一个iOS APP的发布上线，一般来说都需要经历:编译打包 -&amp;gt; 截图 -&amp;gt; 填写一些说明文字 -&amp;gt; 上传ipa到itunes connect -&amp;gt; 提交供审核。每次都要进行这么多“繁琐”的步骤，对于某些步骤可能一次还不能执行成功需要等着界面提示上传错误然后手动重新再来一次。 在日常开发中，打包也是最后上线不可缺少的环节，如果需要生成ipa文件通常需要在Xcode里点击">
+<meta name="keywords" content="iOS 开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="fastlane的使用">
 <meta property="og:url" content="http://yoursite.com/2017/05/12/fastlane的使用/index.html">
 <meta property="og:site_name" content="逝殇_Vizard...">
 <meta property="og:description" content="对于一个iOS APP的发布上线，一般来说都需要经历:编译打包 -&amp;gt; 截图 -&amp;gt; 填写一些说明文字 -&amp;gt; 上传ipa到itunes connect -&amp;gt; 提交供审核。每次都要进行这么多“繁琐”的步骤，对于某些步骤可能一次还不能执行成功需要等着界面提示上传错误然后手动重新再来一次。 在日常开发中，打包也是最后上线不可缺少的环节，如果需要生成ipa文件通常需要在Xcode里点击">
-<meta property="og:image" content="http://blog.devzeng.com/images/ios-fastlane-in-action/fastlane-logo.png">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNbRwgy1ffivh5ki06j30wi0p4gue.jpg">
-<meta property="og:image" content="http://blog.devzeng.com/images/ios-fastlane-in-action/fastlane-init.png">
-<meta property="og:updated_time" content="2017-05-12T13:16:07.000Z">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494609016028&di=8b686e244ace761a4177b3b99de9f173&imgtype=0&src=http%3A%2F%2Fimg.article.pchome.net%2Fgame%2F00%2F24%2F75%2F67%2Fpic_lib%2Fwm%2F16c1b8ed70339cb16e5b8e81ea28c5f0.jpg">
+<meta property="og:updated_time" content="2017-05-12T14:22:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="fastlane的使用">
 <meta name="twitter:description" content="对于一个iOS APP的发布上线，一般来说都需要经历:编译打包 -&amp;gt; 截图 -&amp;gt; 填写一些说明文字 -&amp;gt; 上传ipa到itunes connect -&amp;gt; 提交供审核。每次都要进行这么多“繁琐”的步骤，对于某些步骤可能一次还不能执行成功需要等着界面提示上传错误然后手动重新再来一次。 在日常开发中，打包也是最后上线不可缺少的环节，如果需要生成ipa文件通常需要在Xcode里点击">
-<meta name="twitter:image" content="http://blog.devzeng.com/images/ios-fastlane-in-action/fastlane-logo.png">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494609016028&di=8b686e244ace761a4177b3b99de9f173&imgtype=0&src=http%3A%2F%2Fimg.article.pchome.net%2Fgame%2F00%2F24%2F75%2F67%2Fpic_lib%2Fwm%2F16c1b8ed70339cb16e5b8e81ea28c5f0.jpg">
 
 
 
@@ -210,6 +209,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -298,6 +307,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/开发技术/" itemprop="url" rel="index">
+                    <span itemprop="name">开发技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -319,6 +350,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494609016028&di=8b686e244ace761a4177b3b99de9f173&imgtype=0&src=http%3A%2F%2Fimg.article.pchome.net%2Fgame%2F00%2F24%2F75%2F67%2Fpic_lib%2Fwm%2F16c1b8ed70339cb16e5b8e81ea28c5f0.jpg" rel="gallery_cj2lx7qcd0000f81qtza6fy82"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494609016028&di=8b686e244ace761a4177b3b99de9f173&imgtype=0&src=http%3A%2F%2Fimg.article.pchome.net%2Fgame%2F00%2F24%2F75%2F67%2Fpic_lib%2Fwm%2F16c1b8ed70339cb16e5b8e81ea28c5f0.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
       
 
       
@@ -439,6 +486,12 @@ gym(scheme: scheme_name, clean: true, export_method:&apos;appstore&apos;, config
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/iOS-开发/" rel="tag"># iOS 开发</a>
+          
+        </div>
+      
 
       
         
@@ -535,7 +588,25 @@ gym(scheme: scheme_name, clean: true, export_method:&apos;appstore&apos;, config
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -660,8 +731,6 @@ gym(scheme: scheme_name, clean: true, export_method:&apos;appstore&apos;, config
   
 
 
-  
-
 
 
 
@@ -689,9 +758,6 @@ gym(scheme: scheme_name, clean: true, export_method:&apos;appstore&apos;, config
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
