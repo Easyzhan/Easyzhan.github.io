@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-15T12:16:54.000Z</updated>
+  <updated>2017-05-16T13:38:59.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,73 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Node.js简单爬虫</title>
+    <link href="http://yoursite.com/2017/05/16/Node-js%E7%AE%80%E5%8D%95%E7%88%AC%E8%99%AB/"/>
+    <id>http://yoursite.com/2017/05/16/Node-js简单爬虫/</id>
+    <published>2017-05-16T13:22:42.000Z</published>
+    <updated>2017-05-16T13:38:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1494951406852&amp;di=367280f924db4e53682be228cea63f93&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.7xz.com%2Fimg%2Fpicimg%2F201612%2F20161230153304_954cb14589aa8cb8868.jpg" alt=""><br>最近在看 Node.js的书,不得不佩服作者的创造力;遂踩着前人的脚印<br>及时充电,手把手教你写一个简单的爬虫;</p>
+<h3 id="准备好了吗-撒-一库哟"><a href="#准备好了吗-撒-一库哟" class="headerlink" title="准备好了吗 撒,一库哟"></a>准备好了吗 撒,一库哟</h3><pre><code>cd 到你的Coding 目录下
+新建一个文件夹
+接着进入这个文件夹中,安装 express
+npm install express --registry=https://registry.npm.taobao.org
+npm install superagent --save
+npm install cheerio --save
+touch app.js
+</code></pre><h4 id="superagent-和-cheerio是什么"><a href="#superagent-和-cheerio是什么" class="headerlink" title="superagent 和 cheerio是什么?"></a>superagent 和 cheerio是什么?</h4><p>superagent它是一个强大并且可读性很好的轻量级ajaxAPI，<br>是一个关于HTTP方面的一个库，而且它可以将链式写法玩的出神入化。<br>可以理解成一个 Node.js 版的 jquery，<br>用来从网页中以 css selector 取数据，使用方式跟 jquery 一样一样的。</p>
+<h5 id="接下来就是在-app-js-中写代码了-准备工作已经完成-比如这里爬取的是-cNodejs-优秀的-node-社区"><a href="#接下来就是在-app-js-中写代码了-准备工作已经完成-比如这里爬取的是-cNodejs-优秀的-node-社区" class="headerlink" title="接下来就是在 app.js 中写代码了,准备工作已经完成,比如这里爬取的是 cNodejs(优秀的 node 社区)"></a>接下来就是在 app.js 中写代码了,准备工作已经完成,比如这里爬取的是 cNodejs(优秀的 node 社区)</h5><pre><code>var express = require(&apos;express&apos;);
+var superagent = require(&apos;superagent&apos;);
+var cheerio = require(&apos;cheerio&apos;);
+
+
+var app = express();
+
+app.get(&apos;/&apos;, function(req, res, next) {
+ // 用 superagent 去抓取 https://cnodejs.org/ 的内容
+superagent.get(&apos;https://cnodejs.org/&apos;)
+  .end(function(err, sres) {
+    // 常规的错误处理
+    if (err) {
+      return next(err);
+    }
+    var items = [];
+    // sres.text 里面存储着网页的 html 内容，将它传给 cheerio.load，习惯性地命名为 `$`
+    // 接下来就可以使用熟悉的 jquery 操作了
+    var $ = cheerio.load(sres.text);
+    $(&apos;#topic_list .cell&apos;).each(function(index, element) {
+      var $img = $(element).find(&apos;img&apos;);
+      var $topic = $(element).find(&apos;.topic_title&apos;);
+      items.push({
+        author: $img.attr(&apos;title&apos;),
+        title: $topic.attr(&apos;title&apos;),
+        href: $topic.attr(&apos;href&apos;)
+      });
+    });
+    res.send(items);
+  });
+});
+
+app.listen(3000, function() {
+ console.log(&apos;app is listening at port 3000&apos;);
+});
+</code></pre><h4 id="接着上面的终端里输入-node-app-js"><a href="#接着上面的终端里输入-node-app-js" class="headerlink" title="接着上面的终端里输入 node app.js"></a>接着上面的终端里输入 node app.js</h4><p>然后就可以在<a href="http://localhost:3000中看到抓取的数据了" target="_blank" rel="external">http://localhost:3000中看到抓取的数据了</a><br>如下图所示:<br><img src="http://ww4.sinaimg.cn/large/006tNbRwgy1ffnj88n5d8j30s2122dmg.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://timgsa.baidu.com/timg?image&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1494951406852&amp;amp;di=367280f924db4e53682be228ce
+    
+    </summary>
+    
+      <category term="开发技术" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="NodeJS" scheme="http://yoursite.com/tags/NodeJS/"/>
+    
+  </entry>
   
   <entry>
     <title>永恒之蓝(勒索蠕虫)修复指南</title>

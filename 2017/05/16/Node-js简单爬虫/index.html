@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="NodeJS," />
 
 
 
@@ -92,21 +92,20 @@
 
 
 
-<meta name="description" content="本次威胁主要影响以下操作系统: 桌面版本操作系统: Windows 2000 Windows XP Windows Vista Windows7 Windows8 Windows8.1 Windows10 为了确保周一开机时公司电脑和服务器免遭病毒感染或避免更大范围的传播，技术部制定了本文档，用于指导公司小伙伴 根据指南内容进行安全操作。我们选用了 360 勒索蠕虫漏洞修复工具，此修复工具集成免疫">
+<meta name="description" content="最近在看 Node.js的书,不得不佩服作者的创造力;遂踩着前人的脚印及时充电,手把手教你写一个简单的爬虫; 准备好了吗 撒,一库哟cd 到你的Coding 目录下 新建一个文件夹 接着进入这个文件夹中,安装 express npm install express --registry=https://registry.npm.taobao.org npm install superagent -">
+<meta name="keywords" content="NodeJS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="永恒之蓝(勒索蠕虫)修复指南">
-<meta property="og:url" content="http://yoursite.com/2017/05/15/永恒之蓝-勒索蠕虫-修复指南/index.html">
+<meta property="og:title" content="Node.js简单爬虫">
+<meta property="og:url" content="http://yoursite.com/2017/05/16/Node-js简单爬虫/index.html">
 <meta property="og:site_name" content="逝殇_Vizard...">
-<meta property="og:description" content="本次威胁主要影响以下操作系统: 桌面版本操作系统: Windows 2000 Windows XP Windows Vista Windows7 Windows8 Windows8.1 Windows10 为了确保周一开机时公司电脑和服务器免遭病毒感染或避免更大范围的传播，技术部制定了本文档，用于指导公司小伙伴 根据指南内容进行安全操作。我们选用了 360 勒索蠕虫漏洞修复工具，此修复工具集成免疫">
-<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494860682820&di=0f1fb4769f245c3ebba2960ff4653627&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%253D580%2Fsign%3D6e5b3ae0af345982c58ae59a3cf5310b%2F26508435e5dde7116969ed62a5efce1b9c16619a.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tKfTcgy1ffmaxcc6djj30oo0iw79x.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tKfTcgy1ffmazv3zrrj30u00ieted.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tKfTcgy1ffmb2fxbisj31380nkafr.jpg">
-<meta property="og:updated_time" content="2017-05-15T12:16:54.000Z">
+<meta property="og:description" content="最近在看 Node.js的书,不得不佩服作者的创造力;遂踩着前人的脚印及时充电,手把手教你写一个简单的爬虫; 准备好了吗 撒,一库哟cd 到你的Coding 目录下 新建一个文件夹 接着进入这个文件夹中,安装 express npm install express --registry=https://registry.npm.taobao.org npm install superagent -">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494951406852&di=367280f924db4e53682be228cea63f93&imgtype=0&src=http%3A%2F%2Fimg.7xz.com%2Fimg%2Fpicimg%2F201612%2F20161230153304_954cb14589aa8cb8868.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNbRwgy1ffnj88n5d8j30s2122dmg.jpg">
+<meta property="og:updated_time" content="2017-05-16T13:38:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="永恒之蓝(勒索蠕虫)修复指南">
-<meta name="twitter:description" content="本次威胁主要影响以下操作系统: 桌面版本操作系统: Windows 2000 Windows XP Windows Vista Windows7 Windows8 Windows8.1 Windows10 为了确保周一开机时公司电脑和服务器免遭病毒感染或避免更大范围的传播，技术部制定了本文档，用于指导公司小伙伴 根据指南内容进行安全操作。我们选用了 360 勒索蠕虫漏洞修复工具，此修复工具集成免疫">
-<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494860682820&di=0f1fb4769f245c3ebba2960ff4653627&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%253D580%2Fsign%3D6e5b3ae0af345982c58ae59a3cf5310b%2F26508435e5dde7116969ed62a5efce1b9c16619a.jpg">
+<meta name="twitter:title" content="Node.js简单爬虫">
+<meta name="twitter:description" content="最近在看 Node.js的书,不得不佩服作者的创造力;遂踩着前人的脚印及时充电,手把手教你写一个简单的爬虫; 准备好了吗 撒,一库哟cd 到你的Coding 目录下 新建一个文件夹 接着进入这个文件夹中,安装 express npm install express --registry=https://registry.npm.taobao.org npm install superagent -">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494951406852&di=367280f924db4e53682be228cea63f93&imgtype=0&src=http%3A%2F%2Fimg.7xz.com%2Fimg%2Fpicimg%2F201612%2F20161230153304_954cb14589aa8cb8868.jpg">
 
 
 
@@ -134,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/15/永恒之蓝-勒索蠕虫-修复指南/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/16/Node-js简单爬虫/"/>
 
 
 
 
 
-  <title>永恒之蓝(勒索蠕虫)修复指南 | 逝殇_Vizard...</title>
+  <title>Node.js简单爬虫 | 逝殇_Vizard...</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +268,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/15/永恒之蓝-勒索蠕虫-修复指南/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/16/Node-js简单爬虫/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="_Vizard战国">
@@ -286,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">永恒之蓝(勒索蠕虫)修复指南</h1>
+          <h1 class="post-title" itemprop="name headline">Node.js简单爬虫</h1>
         
 
         <div class="post-meta">
@@ -298,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T19:57:46+08:00">
-                2017-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-16T21:22:42+08:00">
+                2017-05-16
               </time>
             
 
@@ -308,6 +307,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/开发技术/" itemprop="url" rel="index">
+                    <span itemprop="name">开发技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -333,24 +354,51 @@
       
 
       
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1494860682820&amp;di=0f1fb4769f245c3ebba2960ff4653627&amp;imgtype=0&amp;src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%253D580%2Fsign%3D6e5b3ae0af345982c58ae59a3cf5310b%2F26508435e5dde7116969ed62a5efce1b9c16619a.jpg" alt=""><br>本次威胁主要影响以下操作系统: 桌面版本操作系统:</p>
-<pre><code>Windows 2000
-Windows XP
-Windows Vista
-Windows7
-Windows8
-Windows8.1
-Windows10
-</code></pre><p>为了确保周一开机时公司电脑和服务器免遭病毒感染或避免更大范围的传播，<br>技术部制定了本文档，用于指导公司小伙伴 根据指南内容进行安全操作。<br>我们选用了 360 勒索蠕虫漏洞修复工具，此修复工具集成免疫、 SMB 服务关闭和各系统下 MS17-010 漏洞检测与修复于一体。<br>可在离线网络环境下一键式修复系统存在的 MS17-010 漏洞，根本解决勒索蠕虫利用 MS17-010 漏洞带来的安全隐患。<br>另外近期网络安全事故频发，Windows 电脑需要安装金山毒霸或者 360 杀毒。</p>
-<h4 id="第一步、修复工具及补丁包安装"><a href="#第一步、修复工具及补丁包安装" class="headerlink" title="第一步、修复工具及补丁包安装:"></a>第一步、修复工具及补丁包安装:</h4><p>公司内网下载:点击下载 xxx.zip (公司内网地址)<br>外网下载: 点击下载 <a href="http://down.b.360.cn/EternalBlueFix.zip" target="_blank" rel="external">http://down.b.360.cn/EternalBlueFix.zip</a> 下图为补丁包目录，根据自己系统版本和位数进行选择安装。<br><img src="http://ww3.sinaimg.cn/large/006tKfTcgy1ffmaxcc6djj30oo0iw79x.jpg" alt=""></p>
-<h4 id="二、关闭-445-端口操作。"><a href="#二、关闭-445-端口操作。" class="headerlink" title="二、关闭 445 端口操作。"></a>二、关闭 445 端口操作。</h4><p>在 Windows 系统右键点击“我的电脑”，在“服务和应用程序”下的服务项中双击“Server”，<br>在出现的 Server 属性 页面中对“启动类型”选择禁用，并点击“停止”按钮关闭服务。<br>操作成功后，建议重启系统以确保生效。</p>
-<p><img src="http://ww3.sinaimg.cn/large/006tKfTcgy1ffmazv3zrrj30u00ieted.jpg" alt=""></p>
-<h4 id="三、关闭-139-端口操作"><a href="#三、关闭-139-端口操作" class="headerlink" title="三、关闭 139 端口操作"></a>三、关闭 139 端口操作</h4><pre><code>1、右键任务栏网络图标或开打控制面板找到“网络与共享中心”选项;
-2、点击“更改适配器设置”;
-3、右键本地连接或无线连接的“属性”;
-4、打开”Intelnet 协议版本 4(TCP/IPV4)”，可参加下图操作步骤。
-最后一定要点击“确定”进行保存操作。
-</code></pre><p><img src="http://ww1.sinaimg.cn/large/006tKfTcgy1ffmb2fxbisj31380nkafr.jpg" alt=""></p>
+        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1494951406852&amp;di=367280f924db4e53682be228cea63f93&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.7xz.com%2Fimg%2Fpicimg%2F201612%2F20161230153304_954cb14589aa8cb8868.jpg" alt=""><br>最近在看 Node.js的书,不得不佩服作者的创造力;遂踩着前人的脚印<br>及时充电,手把手教你写一个简单的爬虫;</p>
+<h3 id="准备好了吗-撒-一库哟"><a href="#准备好了吗-撒-一库哟" class="headerlink" title="准备好了吗 撒,一库哟"></a>准备好了吗 撒,一库哟</h3><pre><code>cd 到你的Coding 目录下
+新建一个文件夹
+接着进入这个文件夹中,安装 express
+npm install express --registry=https://registry.npm.taobao.org
+npm install superagent --save
+npm install cheerio --save
+touch app.js
+</code></pre><h4 id="superagent-和-cheerio是什么"><a href="#superagent-和-cheerio是什么" class="headerlink" title="superagent 和 cheerio是什么?"></a>superagent 和 cheerio是什么?</h4><p>superagent它是一个强大并且可读性很好的轻量级ajaxAPI，<br>是一个关于HTTP方面的一个库，而且它可以将链式写法玩的出神入化。<br>可以理解成一个 Node.js 版的 jquery，<br>用来从网页中以 css selector 取数据，使用方式跟 jquery 一样一样的。</p>
+<h5 id="接下来就是在-app-js-中写代码了-准备工作已经完成-比如这里爬取的是-cNodejs-优秀的-node-社区"><a href="#接下来就是在-app-js-中写代码了-准备工作已经完成-比如这里爬取的是-cNodejs-优秀的-node-社区" class="headerlink" title="接下来就是在 app.js 中写代码了,准备工作已经完成,比如这里爬取的是 cNodejs(优秀的 node 社区)"></a>接下来就是在 app.js 中写代码了,准备工作已经完成,比如这里爬取的是 cNodejs(优秀的 node 社区)</h5><pre><code>var express = require(&apos;express&apos;);
+var superagent = require(&apos;superagent&apos;);
+var cheerio = require(&apos;cheerio&apos;);
+
+
+var app = express();
+
+app.get(&apos;/&apos;, function(req, res, next) {
+ // 用 superagent 去抓取 https://cnodejs.org/ 的内容
+superagent.get(&apos;https://cnodejs.org/&apos;)
+  .end(function(err, sres) {
+    // 常规的错误处理
+    if (err) {
+      return next(err);
+    }
+    var items = [];
+    // sres.text 里面存储着网页的 html 内容，将它传给 cheerio.load，习惯性地命名为 `$`
+    // 接下来就可以使用熟悉的 jquery 操作了
+    var $ = cheerio.load(sres.text);
+    $(&apos;#topic_list .cell&apos;).each(function(index, element) {
+      var $img = $(element).find(&apos;img&apos;);
+      var $topic = $(element).find(&apos;.topic_title&apos;);
+      items.push({
+        author: $img.attr(&apos;title&apos;),
+        title: $topic.attr(&apos;title&apos;),
+        href: $topic.attr(&apos;href&apos;)
+      });
+    });
+    res.send(items);
+  });
+});
+
+app.listen(3000, function() {
+ console.log(&apos;app is listening at port 3000&apos;);
+});
+</code></pre><h4 id="接着上面的终端里输入-node-app-js"><a href="#接着上面的终端里输入-node-app-js" class="headerlink" title="接着上面的终端里输入 node app.js"></a>接着上面的终端里输入 node app.js</h4><p>然后就可以在<a href="http://localhost:3000中看到抓取的数据了" target="_blank" rel="external">http://localhost:3000中看到抓取的数据了</a><br>如下图所示:<br><img src="http://ww4.sinaimg.cn/large/006tNbRwgy1ffnj88n5d8j30s2122dmg.jpg" alt=""></p>
 
       
     </div>
@@ -378,6 +426,12 @@ Windows10
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/NodeJS/" rel="tag"># NodeJS</a>
+          
+        </div>
+      
 
       
         
@@ -387,8 +441,8 @@ Windows10
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/12/fastlane的使用/" rel="next" title="fastlane的使用">
-                <i class="fa fa-chevron-left"></i> fastlane的使用
+              <a href="/2017/05/15/永恒之蓝-勒索蠕虫-修复指南/" rel="next" title="永恒之蓝(勒索蠕虫)修复指南">
+                <i class="fa fa-chevron-left"></i> 永恒之蓝(勒索蠕虫)修复指南
               </a>
             
           </div>
@@ -396,10 +450,6 @@ Windows10
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/16/Node-js简单爬虫/" rel="prev" title="Node.js简单爬虫">
-                Node.js简单爬虫 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -555,7 +605,7 @@ Windows10
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一步、修复工具及补丁包安装"><span class="nav-number">1.</span> <span class="nav-text">第一步、修复工具及补丁包安装:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、关闭-445-端口操作。"><span class="nav-number">2.</span> <span class="nav-text">二、关闭 445 端口操作。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、关闭-139-端口操作"><span class="nav-number">3.</span> <span class="nav-text">三、关闭 139 端口操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备好了吗-撒-一库哟"><span class="nav-number">1.</span> <span class="nav-text">准备好了吗 撒,一库哟</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#superagent-和-cheerio是什么"><span class="nav-number">1.1.</span> <span class="nav-text">superagent 和 cheerio是什么?</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#接下来就是在-app-js-中写代码了-准备工作已经完成-比如这里爬取的是-cNodejs-优秀的-node-社区"><span class="nav-number">1.1.1.</span> <span class="nav-text">接下来就是在 app.js 中写代码了,准备工作已经完成,比如这里爬取的是 cNodejs(优秀的 node 社区)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接着上面的终端里输入-node-app-js"><span class="nav-number">1.2.</span> <span class="nav-text">接着上面的终端里输入 node app.js</span></a></li></ol></li></ol></div>
             
 
           </div>
