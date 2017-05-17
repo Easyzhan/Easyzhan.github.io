@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-16T13:38:59.000Z</updated>
+  <updated>2017-05-17T04:49:31.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开始一个项目之前的思考</title>
+    <link href="http://yoursite.com/2017/05/17/thinkStart/"/>
+    <id>http://yoursite.com/2017/05/17/thinkStart/</id>
+    <published>2017-05-17T04:35:37.000Z</published>
+    <updated>2017-05-17T04:49:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1495006385145&amp;di=a0b78ebef4ddb744c8476053e29e8adc&amp;imgtype=0&amp;src=http%3A%2F%2Fimgres.roboo.com%2Fgroup7%2FM00%2FEA%2FFE%2FwKhkDFf_woCAABTgAACqp_qaNtQ458.jpg" alt=""></p>
+<h3 id="1-确定编码风格"><a href="#1-确定编码风格" class="headerlink" title="1.确定编码风格"></a>1.确定编码风格</h3><p>风格无对错</p>
+<p>OC的<br><a href="https://github.com/NYTimes/objective-c-style-guide" target="_blank" rel="external">https://github.com/NYTimes/objective-c-style-guide</a></p>
+<p>swift<br><a href="https://github.com/futurice/ios-good-practices" target="_blank" rel="external">https://github.com/futurice/ios-good-practices</a></p>
+<h3 id="2-在写代码之前确定应用程序的架构"><a href="#2-在写代码之前确定应用程序的架构" class="headerlink" title="2.在写代码之前确定应用程序的架构"></a>2.在写代码之前确定应用程序的架构</h3><p>是MVC+ 还是MVVM,还是MVP</p>
+<h3 id="3-确定应用的目录结构"><a href="#3-确定应用的目录结构" class="headerlink" title="3.确定应用的目录结构"></a>3.确定应用的目录结构</h3><p><img src="http://ww4.sinaimg.cn/large/006tNbRwgy1ffo9jbkxahj30jk04wq33.jpg" alt=""><br>有人说按着架构MVC,MVVM的形式来,有的又说按照模块来<br>个人认为,小的项目按架构来结构清晰,大型的最好还是按模块来<br>这样方便管理</p>
+<h3 id="4-三方框架-依赖的管理"><a href="#4-三方框架-依赖的管理" class="headerlink" title="4.三方框架,依赖的管理"></a>4.三方框架,依赖的管理</h3><p>用pod还是carthage<br>CocoaPods的目的是对用户简单，但是Carthage对用户来说是灵活的、不干涉的。<br>不幸的是，Carthage的最大的缺点是—-只支持iOS8及以后版本。</p>
+<h3 id="5-确定切换环境的方式"><a href="#5-确定切换环境的方式" class="headerlink" title="5.确定切换环境的方式"></a>5.确定切换环境的方式</h3><p>在企业开发时候不应该直接用生产环境直接进行开发,二十分为开发环境,测试环境,stable环境这样</p>
+<h3 id="6-设置合适的证书"><a href="#6-设置合适的证书" class="headerlink" title="6.设置合适的证书"></a>6.设置合适的证书</h3><p>当团队开发时候,不要随便fix issue</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://timgsa.baidu.com/timg?image&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1495006385145&amp;amp;di=a0b78ebef4ddb744c8476053e2
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Node.js简单爬虫</title>
