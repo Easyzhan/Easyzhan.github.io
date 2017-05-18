@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-17T12:53:01.000Z</updated>
+  <updated>2017-05-18T13:23:43.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>unrecognized selector的异常</title>
+    <link href="http://yoursite.com/2017/05/18/unrecognized-selector%E7%9A%84%E5%BC%82%E5%B8%B8/"/>
+    <id>http://yoursite.com/2017/05/18/unrecognized-selector的异常/</id>
+    <published>2017-05-18T13:20:30.000Z</published>
+    <updated>2017-05-18T13:23:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/large/006tKfTcgy1ffpty74nmdj30pw0hejuk.jpg" alt=""></p>
+<h3 id="unrecognized-selector的异常之前的三次拯救"><a href="#unrecognized-selector的异常之前的三次拯救" class="headerlink" title="unrecognized selector的异常之前的三次拯救:"></a>unrecognized selector的异常之前的三次拯救:</h3><h4 id="1-Method-resolution"><a href="#1-Method-resolution" class="headerlink" title="1. Method resolution"></a>1. Method resolution</h4><p>objc运行时会调用+resolveInstanceMethod:或者<br> +resolveClassMethod:，让你有机会提供一个函数实现。<br> 如果你添加了函数，那运行时系统就会重新启动一次消息发送的过程，<br> 否则 ，运行时就会移到下一步，消息转发（Message Forwarding）。</p>
+<h4 id="2-Fast-forwarding"><a href="#2-Fast-forwarding" class="headerlink" title="2. Fast forwarding"></a>2. Fast forwarding</h4><p>如果目标对象实现了-forwardingTargetForSelector:，<br>Runtime 这时就会调用这个方法，<br>给你把这个消息转发给其他对象的机会。<br> 只要这个方法返回的不是nil和self，整个消息发送的过程就会被重启，<br> 当然发送的对象会变成你返回的那个对象。<br> 否则，就会继续Normal Fowarding。<br>  这里叫Fast，只是为了区别下一步的转发机制。<br>  因为这一步不会创建任何新的对象，<br>  但下一步转发会创建一个NSInvocation对象，所以相对更快点。</p>
+<h4 id="3-Normal-forwarding"><a href="#3-Normal-forwarding" class="headerlink" title="3. Normal forwarding"></a>3. Normal forwarding</h4><p>这一步是Runtime最后一次给你挽救的机会。<br>首先它会发送-methodSignatureForSelector:<br>消息获得函数的参数和返回值类型。<br>如果-methodSignatureForSelector:返回nil，<br>Runtime则会发出-doesNotRecognizeSelector:<br>消息，程序这时也就挂掉了。<br>如果返回了一个函数签名，Runtime就会创建一个NSInvocation对象并发送-forwardInvocation:消息给目标对象。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/006tKfTcgy1ffpty74nmdj30pw0hejuk.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;unrecognized-selector的异常之前的三次拯救&quot;&gt;&lt;a href=
+    
+    </summary>
+    
+      <category term="开发技术" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="iOS 开发" scheme="http://yoursite.com/tags/iOS-%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>玩转GCD-主要讲如何用</title>
