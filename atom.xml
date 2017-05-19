@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-18T13:23:43.000Z</updated>
+  <updated>2017-05-19T11:59:38.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS 导航栏属性 透明属性translucent 偏移64 滑动视图内容自动向下偏移的问题总结</title>
+    <link href="http://yoursite.com/2017/05/19/iOS-%E5%AF%BC%E8%88%AA%E6%A0%8F%E5%B1%9E%E6%80%A7-%E9%80%8F%E6%98%8E%E5%B1%9E%E6%80%A7translucent-%E5%81%8F%E7%A7%BB64-%E6%BB%91%E5%8A%A8%E8%A7%86%E5%9B%BE%E5%86%85%E5%AE%B9%E8%87%AA%E5%8A%A8%E5%90%91%E4%B8%8B%E5%81%8F%E7%A7%BB%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/05/19/iOS-导航栏属性-透明属性translucent-偏移64-滑动视图内容自动向下偏移的问题总结/</id>
+    <published>2017-05-19T11:55:12.000Z</published>
+    <updated>2017-05-19T11:59:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="translucent属性"><a href="#translucent属性" class="headerlink" title="translucent属性:"></a>translucent属性:</h4><p>百度翻译:半透明的,透亮的,有光泽的;<br>该属性控制的是导航栏的半透明属性,直接影响到的是视图控制器中视图的frame中0点的位置</p>
+<p>如果设置如下:<br>(1)</p>
+<pre><code>self.navigationController.navigationBar.translucent = NO;
+
+self.view.bounds.size.height 变为原高度 - 64;
+</code></pre><p>如果表视图的尺寸设置为屏幕大小的话,在 IOS7以上的系统中,默认使用 屏幕尺寸为原来大小 即给表视图设置了667的高度,会因为这个属性而偏移到屏幕外面:</p>
+<p>如果在这种情况下,给导航栏设置背景图片,透明图片(没有影响),如果给导航栏设置一张非透明的背景图片(被平铺),如果给导航栏设置背景颜色(无效);</p>
+<p>在</p>
+<pre><code>self.navigationController.navigationBar.translucent = NO;的前提下,如果想要视图的0点还是有屏幕左上角开始 而不是从(0,64)开始,那么就需要做的的就是设置另外一个属性
+</code></pre><p>如果设置如下:<br>(2)</p>
+<pre><code>self.navigationController.navigationBar.translucent = YES;
+
+self.view.bounds.size.height 变为原高度 - 64;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;translucent属性&quot;&gt;&lt;a href=&quot;#translucent属性&quot; class=&quot;headerlink&quot; title=&quot;translucent属性:&quot;&gt;&lt;/a&gt;translucent属性:&lt;/h4&gt;&lt;p&gt;百度翻译:半透明的,透亮的,有光泽的;&lt;br&gt;该
+    
+    </summary>
+    
+      <category term="开发技术" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="iOS 开发" scheme="http://yoursite.com/tags/iOS-%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>unrecognized selector的异常</title>
@@ -47,7 +82,7 @@
     <link href="http://yoursite.com/2017/05/17/DispatchPlay/"/>
     <id>http://yoursite.com/2017/05/17/DispatchPlay/</id>
     <published>2017-05-17T12:38:49.000Z</published>
-    <updated>2017-05-17T12:53:01.000Z</updated>
+    <updated>2017-05-19T12:02:59.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/large/006tNbRwgy1ffon7ij0bjj30pw12an0e.jpg" alt=""></p>
 <h3 id="与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列："><a href="#与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列：" class="headerlink" title="与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列："></a>与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列：</h3><h4 id="Serial-Diapatch-Queue-串行队列"><a href="#Serial-Diapatch-Queue-串行队列" class="headerlink" title="Serial Diapatch Queue 串行队列"></a>Serial Diapatch Queue 串行队列</h4><p>当任务相互依赖，具有明显的先后顺序的时候，使用串行队列是一个不错的选择 创建一个串行队列：</p>
