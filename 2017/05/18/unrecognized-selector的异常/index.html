@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="逝殇_Vizard...">
 <meta property="og:description" content="unrecognized selector的异常之前的三次拯救:1. Method resolutionobjc运行时会调用+resolveInstanceMethod:或者 +resolveClassMethod:，让你有机会提供一个函数实现。 如果你添加了函数，那运行时系统就会重新启动一次消息发送的过程， 否则 ，运行时就会移到下一步，消息转发（Message Forwarding）。 2.">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006tKfTcgy1ffpty74nmdj30pw0hejuk.jpg">
-<meta property="og:updated_time" content="2017-05-18T13:23:43.000Z">
+<meta property="og:updated_time" content="2017-05-19T12:09:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="unrecognized selector的异常">
 <meta name="twitter:description" content="unrecognized selector的异常之前的三次拯救:1. Method resolutionobjc运行时会调用+resolveInstanceMethod:或者 +resolveClassMethod:，让你有机会提供一个函数实现。 如果你添加了函数，那运行时系统就会重新启动一次消息发送的过程， 否则 ，运行时就会移到下一步，消息转发（Message Forwarding）。 2.">
@@ -351,9 +351,25 @@
 
       
       
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="http://ww3.sinaimg.cn/large/006tKfTcgy1ffpty74nmdj30pw0hejuk.jpg" rel="gallery_cj2vsvkb6000bds1q2m0ztc50"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://ww3.sinaimg.cn/large/006tKfTcgy1ffpty74nmdj30pw0hejuk.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
-        <p><img src="http://ww3.sinaimg.cn/large/006tKfTcgy1ffpty74nmdj30pw0hejuk.jpg" alt=""></p>
+        <!-- ![](http://ww3.sinaimg.cn/large/006tKfTcgy1ffpty74nmdj30pw0hejuk.jpg) -->
 <h3 id="unrecognized-selector的异常之前的三次拯救"><a href="#unrecognized-selector的异常之前的三次拯救" class="headerlink" title="unrecognized selector的异常之前的三次拯救:"></a>unrecognized selector的异常之前的三次拯救:</h3><h4 id="1-Method-resolution"><a href="#1-Method-resolution" class="headerlink" title="1. Method resolution"></a>1. Method resolution</h4><p>objc运行时会调用+resolveInstanceMethod:或者<br> +resolveClassMethod:，让你有机会提供一个函数实现。<br> 如果你添加了函数，那运行时系统就会重新启动一次消息发送的过程，<br> 否则 ，运行时就会移到下一步，消息转发（Message Forwarding）。</p>
 <h4 id="2-Fast-forwarding"><a href="#2-Fast-forwarding" class="headerlink" title="2. Fast forwarding"></a>2. Fast forwarding</h4><p>如果目标对象实现了-forwardingTargetForSelector:，<br>Runtime 这时就会调用这个方法，<br>给你把这个消息转发给其他对象的机会。<br> 只要这个方法返回的不是nil和self，整个消息发送的过程就会被重启，<br> 当然发送的对象会变成你返回的那个对象。<br> 否则，就会继续Normal Fowarding。<br>  这里叫Fast，只是为了区别下一步的转发机制。<br>  因为这一步不会创建任何新的对象，<br>  但下一步转发会创建一个NSInvocation对象，所以相对更快点。</p>
 <h4 id="3-Normal-forwarding"><a href="#3-Normal-forwarding" class="headerlink" title="3. Normal forwarding"></a>3. Normal forwarding</h4><p>这一步是Runtime最后一次给你挽救的机会。<br>首先它会发送-methodSignatureForSelector:<br>消息获得函数的参数和返回值类型。<br>如果-methodSignatureForSelector:返回nil，<br>Runtime则会发出-doesNotRecognizeSelector:<br>消息，程序这时也就挂掉了。<br>如果返回了一个函数签名，Runtime就会创建一个NSInvocation对象并发送-forwardInvocation:消息给目标对象。</p>

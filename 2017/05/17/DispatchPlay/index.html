@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="逝殇_Vizard...">
 <meta property="og:description" content="与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列：Serial Diapatch Queue 串行队列当任务相互依赖，具有明显的先后顺序的时候，使用串行队列是一个不错的选择 创建一个串行队列： dispatch_queue_t serialDispatchQueue=dispatch_queue_create(&amp;quot;com.test.queue&amp;quot;,">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNbRwgy1ffon7ij0bjj30pw12an0e.jpg">
-<meta property="og:updated_time" content="2017-05-19T12:02:59.000Z">
+<meta property="og:updated_time" content="2017-05-19T12:06:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="玩转GCD-主要讲如何用">
 <meta name="twitter:description" content="与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列：Serial Diapatch Queue 串行队列当任务相互依赖，具有明显的先后顺序的时候，使用串行队列是一个不错的选择 创建一个串行队列： dispatch_queue_t serialDispatchQueue=dispatch_queue_create(&amp;quot;com.test.queue&amp;quot;,">
@@ -351,9 +351,25 @@
 
       
       
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="http://ww2.sinaimg.cn/large/006tNbRwgy1ffon7ij0bjj30pw12an0e.jpg" rel="gallery_cj2vsvkaq0002ds1q8won6awu"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://ww2.sinaimg.cn/large/006tNbRwgy1ffon7ij0bjj30pw12an0e.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
-        <p><img src="http://ww2.sinaimg.cn/large/006tNbRwgy1ffon7ij0bjj30pw12an0e.jpg" alt=""></p>
+        <!-- ![](http://ww2.sinaimg.cn/large/006tNbRwgy1ffon7ij0bjj30pw12an0e.jpg) -->
 <h3 id="与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列："><a href="#与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列：" class="headerlink" title="与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列："></a>与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列：</h3><h4 id="Serial-Diapatch-Queue-串行队列"><a href="#Serial-Diapatch-Queue-串行队列" class="headerlink" title="Serial Diapatch Queue 串行队列"></a>Serial Diapatch Queue 串行队列</h4><p>当任务相互依赖，具有明显的先后顺序的时候，使用串行队列是一个不错的选择 创建一个串行队列：</p>
 <pre><code>dispatch_queue_t serialDispatchQueue=dispatch_queue_create(&quot;com.test.queue&quot;, DISPATCH_QUEUE_SERIAL);
 </code></pre><h4 id="第一个参数为队列名，第二个参数为队列类型，当然，第二个参数如果写NULL，创建出来的也是一个串行队列。然后我们在异步线程来执行这个队列："><a href="#第一个参数为队列名，第二个参数为队列类型，当然，第二个参数如果写NULL，创建出来的也是一个串行队列。然后我们在异步线程来执行这个队列：" class="headerlink" title="第一个参数为队列名，第二个参数为队列类型，当然，第二个参数如果写NULL，创建出来的也是一个串行队列。然后我们在异步线程来执行这个队列："></a>第一个参数为队列名，第二个参数为队列类型，当然，第二个参数如果写NULL，创建出来的也是一个串行队列。然后我们在异步线程来执行这个队列：</h4><pre><code>dispatch_async(serialDispatchQueue, ^{

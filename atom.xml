@@ -55,9 +55,9 @@ self.view.bounds.size.height 变为原高度 - 64;
     <link href="http://yoursite.com/2017/05/18/unrecognized-selector%E7%9A%84%E5%BC%82%E5%B8%B8/"/>
     <id>http://yoursite.com/2017/05/18/unrecognized-selector的异常/</id>
     <published>2017-05-18T13:20:30.000Z</published>
-    <updated>2017-05-18T13:23:43.000Z</updated>
+    <updated>2017-05-19T12:09:03.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ww3.sinaimg.cn/large/006tKfTcgy1ffpty74nmdj30pw0hejuk.jpg" alt=""></p>
+    <content type="html"><![CDATA[<!-- ![](http://ww3.sinaimg.cn/large/006tKfTcgy1ffpty74nmdj30pw0hejuk.jpg) -->
 <h3 id="unrecognized-selector的异常之前的三次拯救"><a href="#unrecognized-selector的异常之前的三次拯救" class="headerlink" title="unrecognized selector的异常之前的三次拯救:"></a>unrecognized selector的异常之前的三次拯救:</h3><h4 id="1-Method-resolution"><a href="#1-Method-resolution" class="headerlink" title="1. Method resolution"></a>1. Method resolution</h4><p>objc运行时会调用+resolveInstanceMethod:或者<br> +resolveClassMethod:，让你有机会提供一个函数实现。<br> 如果你添加了函数，那运行时系统就会重新启动一次消息发送的过程，<br> 否则 ，运行时就会移到下一步，消息转发（Message Forwarding）。</p>
 <h4 id="2-Fast-forwarding"><a href="#2-Fast-forwarding" class="headerlink" title="2. Fast forwarding"></a>2. Fast forwarding</h4><p>如果目标对象实现了-forwardingTargetForSelector:，<br>Runtime 这时就会调用这个方法，<br>给你把这个消息转发给其他对象的机会。<br> 只要这个方法返回的不是nil和self，整个消息发送的过程就会被重启，<br> 当然发送的对象会变成你返回的那个对象。<br> 否则，就会继续Normal Fowarding。<br>  这里叫Fast，只是为了区别下一步的转发机制。<br>  因为这一步不会创建任何新的对象，<br>  但下一步转发会创建一个NSInvocation对象，所以相对更快点。</p>
 <h4 id="3-Normal-forwarding"><a href="#3-Normal-forwarding" class="headerlink" title="3. Normal forwarding"></a>3. Normal forwarding</h4><p>这一步是Runtime最后一次给你挽救的机会。<br>首先它会发送-methodSignatureForSelector:<br>消息获得函数的参数和返回值类型。<br>如果-methodSignatureForSelector:返回nil，<br>Runtime则会发出-doesNotRecognizeSelector:<br>消息，程序这时也就挂掉了。<br>如果返回了一个函数签名，Runtime就会创建一个NSInvocation对象并发送-forwardInvocation:消息给目标对象。</p>
@@ -65,8 +65,8 @@ self.view.bounds.size.height 变为原高度 - 64;
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/006tKfTcgy1ffpty74nmdj30pw0hejuk.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;unrecognized-selector的异常之前的三次拯救&quot;&gt;&lt;a href=
+      &lt;!-- ![](http://ww3.sinaimg.cn/large/006tKfTcgy1ffpty74nmdj30pw0hejuk.jpg) --&gt;
+&lt;h3 id=&quot;unrecognized-selector的异常之前的三次拯救&quot;&gt;&lt;a href=&quot;#unrecogniz
     
     </summary>
     
@@ -82,9 +82,9 @@ self.view.bounds.size.height 变为原高度 - 64;
     <link href="http://yoursite.com/2017/05/17/DispatchPlay/"/>
     <id>http://yoursite.com/2017/05/17/DispatchPlay/</id>
     <published>2017-05-17T12:38:49.000Z</published>
-    <updated>2017-05-19T12:02:59.000Z</updated>
+    <updated>2017-05-19T12:06:59.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://ww2.sinaimg.cn/large/006tNbRwgy1ffon7ij0bjj30pw12an0e.jpg" alt=""></p>
+    <content type="html"><![CDATA[<!-- ![](http://ww2.sinaimg.cn/large/006tNbRwgy1ffon7ij0bjj30pw12an0e.jpg) -->
 <h3 id="与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列："><a href="#与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列：" class="headerlink" title="与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列："></a>与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列：</h3><h4 id="Serial-Diapatch-Queue-串行队列"><a href="#Serial-Diapatch-Queue-串行队列" class="headerlink" title="Serial Diapatch Queue 串行队列"></a>Serial Diapatch Queue 串行队列</h4><p>当任务相互依赖，具有明显的先后顺序的时候，使用串行队列是一个不错的选择 创建一个串行队列：</p>
 <pre><code>dispatch_queue_t serialDispatchQueue=dispatch_queue_create(&quot;com.test.queue&quot;, DISPATCH_QUEUE_SERIAL);
 </code></pre><h4 id="第一个参数为队列名，第二个参数为队列类型，当然，第二个参数如果写NULL，创建出来的也是一个串行队列。然后我们在异步线程来执行这个队列："><a href="#第一个参数为队列名，第二个参数为队列类型，当然，第二个参数如果写NULL，创建出来的也是一个串行队列。然后我们在异步线程来执行这个队列：" class="headerlink" title="第一个参数为队列名，第二个参数为队列类型，当然，第二个参数如果写NULL，创建出来的也是一个串行队列。然后我们在异步线程来执行这个队列："></a>第一个参数为队列名，第二个参数为队列类型，当然，第二个参数如果写NULL，创建出来的也是一个串行队列。然后我们在异步线程来执行这个队列：</h4><pre><code>dispatch_async(serialDispatchQueue, ^{
@@ -254,8 +254,8 @@ return instance;
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/006tNbRwgy1ffon7ij0bjj30pw12an0e.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列：
+      &lt;!-- ![](http://ww2.sinaimg.cn/large/006tNbRwgy1ffon7ij0bjj30pw12an0e.jpg) --&gt;
+&lt;h3 id=&quot;与其说CGD是线程管理，不如说是队列管理，那么我们先来介绍一下GCD中常用的队列：&quot;&gt;&lt;a href=&quot;#
     
     </summary>
     
@@ -298,9 +298,10 @@ return instance;
     <link href="http://yoursite.com/2017/05/16/Node-js%E7%AE%80%E5%8D%95%E7%88%AC%E8%99%AB/"/>
     <id>http://yoursite.com/2017/05/16/Node-js简单爬虫/</id>
     <published>2017-05-16T13:22:42.000Z</published>
-    <updated>2017-05-16T13:38:59.000Z</updated>
+    <updated>2017-05-19T12:09:03.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1494951406852&amp;di=367280f924db4e53682be228cea63f93&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.7xz.com%2Fimg%2Fpicimg%2F201612%2F20161230153304_954cb14589aa8cb8868.jpg" alt=""><br>最近在看 Node.js的书,不得不佩服作者的创造力;遂踩着前人的脚印<br>及时充电,手把手教你写一个简单的爬虫;</p>
+    <content type="html"><![CDATA[<!-- ![](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494951406852&di=367280f924db4e53682be228cea63f93&imgtype=0&src=http%3A%2F%2Fimg.7xz.com%2Fimg%2Fpicimg%2F201612%2F20161230153304_954cb14589aa8cb8868.jpg) -->
+<p>最近在看 Node.js的书,不得不佩服作者的创造力;遂踩着前人的脚印<br>及时充电,手把手教你写一个简单的爬虫;</p>
 <h3 id="准备好了吗-撒-一库哟"><a href="#准备好了吗-撒-一库哟" class="headerlink" title="准备好了吗 撒,一库哟"></a>准备好了吗 撒,一库哟</h3><pre><code>cd 到你的Coding 目录下
 新建一个文件夹
 接着进入这个文件夹中,安装 express
@@ -349,7 +350,7 @@ app.listen(3000, function() {
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://timgsa.baidu.com/timg?image&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1494951406852&amp;amp;di=367280f924db4e53682be228ce
+      &lt;!-- ![](https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1494951406852&amp;di=367280f924db4e53682be228cea63f93&amp;imgtype=0&amp;src
     
     </summary>
     
