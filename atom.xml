@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-23T12:24:31.000Z</updated>
+  <updated>2017-05-24T15:23:56.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,74 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python 图片转符号图</title>
+    <link href="http://yoursite.com/2017/05/24/Python-%E5%9B%BE%E7%89%87%E8%BD%AC%E7%AC%A6%E5%8F%B7%E5%9B%BE/"/>
+    <id>http://yoursite.com/2017/05/24/Python-图片转符号图/</id>
+    <published>2017-05-24T15:00:41.000Z</published>
+    <updated>2017-05-24T15:23:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="先上图-如果用的是-mac-的时候打开-txt-文件时候-com-图就可以清楚的显示了"><a href="#先上图-如果用的是-mac-的时候打开-txt-文件时候-com-图就可以清楚的显示了" class="headerlink" title="先上图,如果用的是 mac 的时候打开 txt 文件时候 com + -图就可以清楚的显示了"></a>先上图,如果用的是 mac 的时候打开 txt 文件时候 com + -图就可以清楚的显示了</h3><p><img src="https://ws3.sinaimg.cn/small/006tNc79gy1ffwuilq31nj312c0yqe2f.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/small/006tNc79gy1ffwug730fcj30ya1781he.jpg" alt=""></p>
+<h4 id="下面上代码吧"><a href="#下面上代码吧" class="headerlink" title="下面上代码吧"></a>下面上代码吧</h4><pre><code>#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+from PIL import Image
+import os
+
+serarr = &apos;&apos;&apos;@#$%&amp;?*aeoc=&lt;{[(/l|!-_:;,.&quot;&apos;^~` &apos;&apos;&apos;
+count = len(serarr)
+
+
+def toText(image_file):  # 此函数不能输入 gif 文件
+image_file = image_file.convert(&quot;L&quot;)  # 转灰度
+asd = &apos;&apos;  # 储存字符串
+for h in range(0, image_file.size[1]):  # h
+    for w in range(0, image_file.size[0]):  # w
+        gray = image_file.getpixel((w, h))
+        asd = asd + serarr[int(gray / (256 / (count)))]
+    asd = asd + &apos;\r\n&apos;
+return asd
+
+
+def toText2(image_file):
+asd = &apos;&apos;  # 储存字符串
+for h in range(0, image_file.size[1]):  # h
+    for w in range(0, image_file.size[0]):  # w
+        r, g, b = image_file.getpixel((w, h))
+        gray = int(r * 0.299 + g * 0.587 + b * 0.114)
+        asd = asd + serarr[int(gray / (256 / (count)))]
+    asd = asd + &apos;\r\n&apos;
+return asd
+
+
+image_file = Image.open(&quot;Unknown.jpg&quot;)  # 打开图片
+image_file = image_file.resize((int(image_file.size[0] * 0.9), int(image_file.size[1] * 0.5)))  # 调整图片大小
+print
+u&apos;Info:&apos;, image_file.size[0], &apos; &apos;, image_file.size[1], &apos; &apos;, count
+
+tmp = open(&apos;tmp.txt&apos;, &apos;w&apos;)
+tmp.write(toText(image_file))
+tmp.close()
+</code></pre><p>用 PyCharm 好用些<br>图形化界面还没搞出来,下次</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;先上图-如果用的是-mac-的时候打开-txt-文件时候-com-图就可以清楚的显示了&quot;&gt;&lt;a href=&quot;#先上图-如果用的是-mac-的时候打开-txt-文件时候-com-图就可以清楚的显示了&quot; class=&quot;headerlink&quot; title=&quot;先上图,如果
+    
+    </summary>
+    
+      <category term="开发技术" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Python 开发" scheme="http://yoursite.com/tags/Python-%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>iOS8的estimatedRowHeight 说好的幸福</title>
     <link href="http://yoursite.com/2017/05/23/iOS8%E7%9A%84estimatedRowHeight-%E8%AF%B4%E5%A5%BD%E7%9A%84%E5%B9%B8%E7%A6%8F/"/>
     <id>http://yoursite.com/2017/05/23/iOS8的estimatedRowHeight-说好的幸福/</id>
     <published>2017-05-23T12:18:00.000Z</published>
-    <updated>2017-05-23T12:24:31.000Z</updated>
+    <updated>2017-05-24T15:25:04.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="一展离愁"><a href="#一展离愁" class="headerlink" title="一展离愁"></a>一展离愁</h3><p>那些年iOS并没有像Android那样6的相对布局，一些老猴咬着jj猛然搞一个Frame模型，一个model模型；当网络请求到数据时候就处理一把数据把model里装一个frame模型用来保存那些动态不固定的高度；然后在model对cell赋值的时候调用heightcell那个tableview的代理方法，然后再把计算好的值给cell。好瘠薄麻烦。<br><img src="http://upload-images.jianshu.io/upload_images/931214-b911beb79cf7c842.gif?imageMogr2/auto-orient/strip" alt="cell_freedom.gif"></p>
 <h3 id="简单点，装逼的方式简单点"><a href="#简单点，装逼的方式简单点" class="headerlink" title="简单点，装逼的方式简单点"></a>简单点，装逼的方式简单点</h3><p>有位大侠可能也觉得这他妈计算太烦人，能不能让我简单的装逼。<br>于是就有了那个GitHub上很有名的框架<br>UITableView+FDTemplateLayoutCell<br>听说可以适配iOS8以下，也是6的一逼；但是我的app以及目前我司的app不需要关心iOS8以下（我相信都是这样）。<br>那么还是来把苹果给我们的estimatedRowHeight玩6了吧</p>
@@ -52,7 +115,7 @@
     <link href="http://yoursite.com/2017/05/19/iOS-%E5%AF%BC%E8%88%AA%E6%A0%8F%E5%B1%9E%E6%80%A7-%E9%80%8F%E6%98%8E%E5%B1%9E%E6%80%A7translucent-%E5%81%8F%E7%A7%BB64-%E6%BB%91%E5%8A%A8%E8%A7%86%E5%9B%BE%E5%86%85%E5%AE%B9%E8%87%AA%E5%8A%A8%E5%90%91%E4%B8%8B%E5%81%8F%E7%A7%BB%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2017/05/19/iOS-导航栏属性-透明属性translucent-偏移64-滑动视图内容自动向下偏移的问题总结/</id>
     <published>2017-05-19T11:55:12.000Z</published>
-    <updated>2017-05-19T11:59:38.000Z</updated>
+    <updated>2017-05-24T15:25:04.000Z</updated>
     
     <content type="html"><![CDATA[<h4 id="translucent属性"><a href="#translucent属性" class="headerlink" title="translucent属性:"></a>translucent属性:</h4><p>百度翻译:半透明的,透亮的,有光泽的;<br>该属性控制的是导航栏的半透明属性,直接影响到的是视图控制器中视图的frame中0点的位置</p>
 <p>如果设置如下:<br>(1)</p>
@@ -87,7 +150,7 @@ self.view.bounds.size.height 变为原高度 - 64;
     <link href="http://yoursite.com/2017/05/18/unrecognized-selector%E7%9A%84%E5%BC%82%E5%B8%B8/"/>
     <id>http://yoursite.com/2017/05/18/unrecognized-selector的异常/</id>
     <published>2017-05-18T13:20:30.000Z</published>
-    <updated>2017-05-19T12:09:03.000Z</updated>
+    <updated>2017-05-24T15:25:04.000Z</updated>
     
     <content type="html"><![CDATA[<!-- ![](http://ww3.sinaimg.cn/large/006tKfTcgy1ffpty74nmdj30pw0hejuk.jpg) -->
 <h3 id="unrecognized-selector的异常之前的三次拯救"><a href="#unrecognized-selector的异常之前的三次拯救" class="headerlink" title="unrecognized selector的异常之前的三次拯救:"></a>unrecognized selector的异常之前的三次拯救:</h3><h4 id="1-Method-resolution"><a href="#1-Method-resolution" class="headerlink" title="1. Method resolution"></a>1. Method resolution</h4><p>objc运行时会调用+resolveInstanceMethod:或者<br> +resolveClassMethod:，让你有机会提供一个函数实现。<br> 如果你添加了函数，那运行时系统就会重新启动一次消息发送的过程，<br> 否则 ，运行时就会移到下一步，消息转发（Message Forwarding）。</p>
@@ -114,9 +177,9 @@ self.view.bounds.size.height 变为原高度 - 64;
     <link href="http://yoursite.com/2017/05/17/thinkStart/"/>
     <id>http://yoursite.com/2017/05/17/thinkStart/</id>
     <published>2017-05-17T04:35:37.000Z</published>
-    <updated>2017-05-17T04:49:31.000Z</updated>
+    <updated>2017-05-24T15:17:40.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1495006385145&amp;di=a0b78ebef4ddb744c8476053e29e8adc&amp;imgtype=0&amp;src=http%3A%2F%2Fimgres.roboo.com%2Fgroup7%2FM00%2FEA%2FFE%2FwKhkDFf_woCAABTgAACqp_qaNtQ458.jpg" alt=""></p>
+    <content type="html"><![CDATA[<p><a href="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1495006385145&amp;di=a0b78ebef4ddb744c8476053e29e8adc&amp;imgtype=0&amp;src=http%3A%2F%2Fimgres.roboo.com%2Fgroup7%2FM00%2FEA%2FFE%2FwKhkDFf_woCAABTgAACqp_qaNtQ458.jpg" target="_blank" rel="external">https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1495006385145&amp;di=a0b78ebef4ddb744c8476053e29e8adc&amp;imgtype=0&amp;src=http%3A%2F%2Fimgres.roboo.com%2Fgroup7%2FM00%2FEA%2FFE%2FwKhkDFf_woCAABTgAACqp_qaNtQ458.jpg</a></p>
 <h3 id="1-确定编码风格"><a href="#1-确定编码风格" class="headerlink" title="1.确定编码风格"></a>1.确定编码风格</h3><p>风格无对错</p>
 <p>OC的<br><a href="https://github.com/NYTimes/objective-c-style-guide" target="_blank" rel="external">https://github.com/NYTimes/objective-c-style-guide</a></p>
 <p>swift<br><a href="https://github.com/futurice/ios-good-practices" target="_blank" rel="external">https://github.com/futurice/ios-good-practices</a></p>
@@ -129,7 +192,7 @@ self.view.bounds.size.height 变为原高度 - 64;
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://timgsa.baidu.com/timg?image&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1495006385145&amp;amp;di=a0b78ebef4ddb744c8476053e2
+      &lt;p&gt;&lt;a href=&quot;https://timgsa.baidu.com/timg?image&amp;amp;quality=80&amp;amp;size=b9999_10000&amp;amp;sec=1495006385145&amp;amp;di=a0b78ebef4ddb744c8476053e29
     
     </summary>
     
@@ -141,7 +204,7 @@ self.view.bounds.size.height 变为原高度 - 64;
     <link href="http://yoursite.com/2017/05/16/Node-js%E7%AE%80%E5%8D%95%E7%88%AC%E8%99%AB/"/>
     <id>http://yoursite.com/2017/05/16/Node-js简单爬虫/</id>
     <published>2017-05-16T13:22:42.000Z</published>
-    <updated>2017-05-19T12:09:03.000Z</updated>
+    <updated>2017-05-24T15:25:04.000Z</updated>
     
     <content type="html"><![CDATA[<!-- ![](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494951406852&di=367280f924db4e53682be228cea63f93&imgtype=0&src=http%3A%2F%2Fimg.7xz.com%2Fimg%2Fpicimg%2F201612%2F20161230153304_954cb14589aa8cb8868.jpg) -->
 <p>最近在看 Node.js的书,不得不佩服作者的创造力;遂踩着前人的脚印<br>及时充电,手把手教你写一个简单的爬虫;</p>
