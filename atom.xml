@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-08T14:42:16.000Z</updated>
+  <updated>2017-07-29T02:22:22.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,13 +16,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>your account 有问题</title>
+    <link href="http://yoursite.com/2017/07/29/your-account-%E6%9C%89%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/07/29/your-account-有问题/</id>
+    <published>2017-07-29T02:14:33.000Z</published>
+    <updated>2017-07-29T02:22:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Your-account-already-has-a-signing-certificate-for-this-machine-but-it-is-not-present-in-your-keychain-To-create-a-new-one-you-must-first-revoke-the-existing-certificate"><a href="#Your-account-already-has-a-signing-certificate-for-this-machine-but-it-is-not-present-in-your-keychain-To-create-a-new-one-you-must-first-revoke-the-existing-certificate" class="headerlink" title="Your account already has a signing certificate for this machine but it is not present in your keychain. To create a new one, you must first revoke the existing certificate."></a>Your account already has a signing certificate for this machine but it is not present in your keychain. To create a new one, you must first revoke the existing certificate.</h3><h3 id="不管是团队开发还是个人换电脑经常会遇到这样的问题那么到底解决办法都有什么呢-今天就来彻底的扫除这个问题"><a href="#不管是团队开发还是个人换电脑经常会遇到这样的问题那么到底解决办法都有什么呢-今天就来彻底的扫除这个问题" class="headerlink" title="不管是团队开发还是个人换电脑经常会遇到这样的问题那么到底解决办法都有什么呢,今天就来彻底的扫除这个问题;"></a>不管是团队开发还是个人换电脑经常会遇到这样的问题那么到底解决办法都有什么呢,今天就来彻底的扫除这个问题;</h3><h4 id="xcode证书管理出现这个错误解决方法："><a href="#xcode证书管理出现这个错误解决方法：" class="headerlink" title="xcode证书管理出现这个错误解决方法："></a>xcode证书管理出现这个错误解决方法：</h4><pre><code>简单点的直接按照Xcode的提示Revoke掉，然后新建证书，
+如果不想Revoke可以叫拥有证书的人导出P12文件，
+然后安装也可以解决，还有一种方法就是下面的方法：
+1.点击Xcode，选择Preferences
+2.选择 Accounts，如果没登录，就登陆自己的账号，然后双击团队的名字那一栏，就是红色框框那一栏
+3.在弹出的界面左下角，点击+号，选iOS Development，就可以解决这问
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Your-account-already-has-a-signing-certificate-for-this-machine-but-it-is-not-present-in-your-keychain-To-create-a-new-one-you-must-
+    
+    </summary>
+    
+      <category term="开发技术" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="iOS 开发" scheme="http://yoursite.com/tags/iOS-%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>RN 操蛋的经历</title>
     <link href="http://yoursite.com/2017/06/08/RN-%E6%93%8D%E8%9B%8B%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
     <id>http://yoursite.com/2017/06/08/RN-操蛋的经历/</id>
     <published>2017-06-08T14:42:16.000Z</published>
-    <updated>2017-06-08T14:42:16.000Z</updated>
+    <updated>2017-07-29T02:20:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>balabala</p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;balabala&lt;/p&gt;
+
     
     </summary>
     
