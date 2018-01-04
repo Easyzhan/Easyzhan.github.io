@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-10T13:59:41.000Z</updated>
+  <updated>2018-01-04T15:42:12.940Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,60 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>mmp-小程序</title>
+    <link href="http://yoursite.com/2018/01/04/mmp/"/>
+    <id>http://yoursite.com/2018/01/04/mmp/</id>
+    <published>2018-01-04T15:36:54.000Z</published>
+    <updated>2018-01-04T15:42:12.940Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="微信小程序的swiper组件是滑块视图容器，也就是说平常我们看到的轮播图就可以用它来做，"><a href="#微信小程序的swiper组件是滑块视图容器，也就是说平常我们看到的轮播图就可以用它来做，" class="headerlink" title="微信小程序的swiper组件是滑块视图容器，也就是说平常我们看到的轮播图就可以用它来做，"></a>微信小程序的swiper组件是滑块视图容器，也就是说平常我们看到的轮播图就可以用它来做，</h4><h4 id="不过这个组件有很多样式是固定的，但是，有时候我们的设计稿的面板指示点是需要个性化的，"><a href="#不过这个组件有很多样式是固定的，但是，有时候我们的设计稿的面板指示点是需要个性化的，" class="headerlink" title="不过这个组件有很多样式是固定的，但是，有时候我们的设计稿的面板指示点是需要个性化的，"></a>不过这个组件有很多样式是固定的，但是，有时候我们的设计稿的面板指示点是需要个性化的，</h4><h4 id="那么如何去修改swiper组件的面板指示点的样式呢？最近在使用swiper的时候也在想这个，"><a href="#那么如何去修改swiper组件的面板指示点的样式呢？最近在使用swiper的时候也在想这个，" class="headerlink" title="那么如何去修改swiper组件的面板指示点的样式呢？最近在使用swiper的时候也在想这个，"></a>那么如何去修改swiper组件的面板指示点的样式呢？最近在使用swiper的时候也在想这个，</h4><h4 id="最后发现在调试的时候，可以看到他的选择器。"><a href="#最后发现在调试的时候，可以看到他的选择器。" class="headerlink" title="最后发现在调试的时候，可以看到他的选择器。"></a>最后发现在调试的时候，可以看到他的选择器。</h4><p><img src="https://i.loli.net/2018/01/04/5a4e479e3f53a.png" alt=""></p>
+<h3 id="轮播图是这样的"><a href="#轮播图是这样的" class="headerlink" title="轮播图是这样的"></a>轮播图是这样的</h3><p><img src="https://i.loli.net/2018/01/04/5a4e47ec0670d.png" alt=""></p>
+<pre><code>&lt;swiper class=&quot;swiper-box&quot; indicator-dots=&quot;{{ indicatordots }}&quot; autoplay=&quot;{{ autoplay }}&quot;&gt;
+&lt;block wx:for=&quot;{{ swiperItem }}&quot;&gt;
+    &lt;swiper-item&gt;
+        &lt;navigator url=&quot;{{ item.linkUrl }}&quot;&gt;
+            &lt;image class=&quot;slide-image&quot; src=&quot;{{ item.imgUrl }}&quot;&gt;&lt;/image&gt;
+        &lt;/navigator&gt;
+    &lt;/swiper-item&gt;
+&lt;/block&gt;
+&lt;/swiper&gt;
+</code></pre><h3 id="对应的-wxss中"><a href="#对应的-wxss中" class="headerlink" title="对应的.wxss中:"></a>对应的.wxss中:</h3><pre><code>.swiper-box .wx-swiper-dots.wx-swiper-dots-horizontal{
+  margin-bottom: 2rpx;
+}
+.swiper-box .wx-swiper-dot{
+ width:40rpx;
+ display: inline-flex;
+ height: 10rpx;
+ margin-left: 20rpx;
+ justify-content:space-between;
+}
+.swiper-box .wx-swiper-dot::before{
+ content: &apos;&apos;;
+ flex-grow: 1;
+ background: rgba(255,255,255,0.8);
+ border-radius: 8rpx
+}
+.swiper-box .wx-swiper-dot-active::before{
+ background:rgba(244,0,0,0.8);
+}
+</code></pre><h3 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h3><p><img src="https://i.loli.net/2018/01/04/5a4e48a046d0d.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;微信小程序的swiper组件是滑块视图容器，也就是说平常我们看到的轮播图就可以用它来做，&quot;&gt;&lt;a href=&quot;#微信小程序的swiper组件是滑块视图容器，也就是说平常我们看到的轮播图就可以用它来做，&quot; class=&quot;headerlink&quot; title=&quot;微信小程
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Yo 票-我的12306</title>
     <link href="http://yoursite.com/2017/08/10/Yo-%E7%A5%A8-%E6%88%91%E7%9A%8412306/"/>
     <id>http://yoursite.com/2017/08/10/Yo-票-我的12306/</id>
     <published>2017-08-10T13:35:38.000Z</published>
-    <updated>2017-08-10T13:59:41.000Z</updated>
+    <updated>2017-08-10T14:09:36.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fieyihq01pj31fy0uqgqm.jpg" alt=""></h2><p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fieyj9v22pj30yo0uu0wm.jpg" alt=""></p>
 <h4 id="说道掌上12306订票客户端-Yo-票-的前世今生"><a href="#说道掌上12306订票客户端-Yo-票-的前世今生" class="headerlink" title="说道掌上12306订票客户端(Yo 票)的前世今生"></a>说道掌上12306订票客户端(Yo 票)的前世今生</h4><pre><code>从字母验证码开始说起,到现在的找你妹验证码;
