@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-01T09:10:25.495Z</updated>
+  <updated>2018-09-05T10:12:49.685Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WX_small_app的反编译探究</title>
+    <link href="http://yoursite.com/2018/09/05/WX-small-app%E7%9A%84%E5%8F%8D%E7%BC%96%E8%AF%91%E6%8E%A2%E7%A9%B6/"/>
+    <id>http://yoursite.com/2018/09/05/WX-small-app的反编译探究/</id>
+    <published>2018-09-05T09:28:17.000Z</published>
+    <updated>2018-09-05T10:12:49.685Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="小甜甜开篇"><a href="#小甜甜开篇" class="headerlink" title="小甜甜开篇"></a>小甜甜开篇</h3><p><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1202706137,1648700884&amp;fm=173&amp;app=25&amp;f=JPEG?w=611&amp;h=437&amp;s=3A81C203562A7315449D15BD03008024" alt=""></p>
+<h4 id="最近想喊朋友一起搞-mac-的微信朋友圈，他说他在搞小程序，试试水；什么？小程序，不是16年就开始了吗，半死不拉活的还搞啊；"><a href="#最近想喊朋友一起搞-mac-的微信朋友圈，他说他在搞小程序，试试水；什么？小程序，不是16年就开始了吗，半死不拉活的还搞啊；" class="headerlink" title="最近想喊朋友一起搞 mac 的微信朋友圈，他说他在搞小程序，试试水；什么？小程序，不是16年就开始了吗，半死不拉活的还搞啊；"></a>最近想喊朋友一起搞 mac 的微信朋友圈，他说他在搞小程序，试试水；什么？小程序，不是16年就开始了吗，半死不拉活的还搞啊；</h4><h4 id="我这个人就喜欢和朋友一起搞事情，跟着朋友一起搞事情。想办法研究研究怎么反编译微信小程序；"><a href="#我这个人就喜欢和朋友一起搞事情，跟着朋友一起搞事情。想办法研究研究怎么反编译微信小程序；" class="headerlink" title="我这个人就喜欢和朋友一起搞事情，跟着朋友一起搞事情。想办法研究研究怎么反编译微信小程序；"></a>我这个人就喜欢和朋友一起搞事情，跟着朋友一起搞事情。想办法研究研究怎么反编译微信小程序；</h4><h4 id="想想办法，干她一炮。我们想仿写一个小程序的时候，前思后想，不如直接来份源码实在；其实小程序的文件是放在微信服务器上的，通过下载到手机上然后做一些不可描述的事情。"><a href="#想想办法，干她一炮。我们想仿写一个小程序的时候，前思后想，不如直接来份源码实在；其实小程序的文件是放在微信服务器上的，通过下载到手机上然后做一些不可描述的事情。" class="headerlink" title="想想办法，干她一炮。我们想仿写一个小程序的时候，前思后想，不如直接来份源码实在；其实小程序的文件是放在微信服务器上的，通过下载到手机上然后做一些不可描述的事情。"></a>想想办法，干她一炮。我们想仿写一个小程序的时候，前思后想，不如直接来份源码实在；其实小程序的文件是放在微信服务器上的，通过下载到手机上然后做一些不可描述的事情。</h4><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><pre><code>node 运行环境，以前安装过的可以忽略
+反编译的脚本-大神已写好（https://github.com/qwerty472123/wxappUnpacker）
+Android 模拟器（mac 我用的是网易木木）
+</code></pre><h3 id="详细步骤："><a href="#详细步骤：" class="headerlink" title="详细步骤："></a>详细步骤：</h3><p>微信小程序的格式就是: .wxapkg<br>.wxapkg是一个二进制文件，有其自己的一套结构。<br>使用模拟器下个微信，然后下个 re文件管理器，然后登陆之后搜一个小程序。<br>这里以12306为例子，搜完之后点击进入12306的小程序如下图：<br><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fuyt93i2h8j30ly178gw2.jpg" alt=""><br>好了，现在可以直接切回模拟器的桌面了，然后点击 RE 文件管理器。<br>这里需要知道wxapkg 存放的目录在哪：<br>/data/data/com.tencent.mm/MicroMsg/一串32位的16进制字符串文件夹/appbrand/pkg/<br>就抵达了目的文件夹</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fuytc8va5nj30ly178771.jpg" alt=""><br>上图是压缩过的，不然发送不到电脑上。<br>压缩之前的操作<br><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fuytdk3anuj30ly178jvg.jpg" alt=""><br>然后发送之<br><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuytej4cyyj30ly178gqo.jpg" alt=""></p>
+<h3 id="接下来厉害了，要反编译了，这里也是坑最多的地方"><a href="#接下来厉害了，要反编译了，这里也是坑最多的地方" class="headerlink" title="接下来厉害了，要反编译了，这里也是坑最多的地方"></a>接下来厉害了，要反编译了，这里也是坑最多的地方</h3><p>1.反编译的脚本，git clone xxx.git 到本地电脑上<br>2.npm install 安装依赖（提示，这里可能会有坑，怎么提示你就怎么搞就行，比如她让你三长一短你就 npm 满足她）<br>3.最后  你懂我啥意思吧</p>
+<pre><code>vizard@VD-DragondeMacBook-Pro:~/WebstormProjects/nodejs-scr/wxappUnpacker$     node wuWxapkg.js /Users/vizard/Downloads/_-831339257_102.wxapkg
+</code></pre><h3 id="最后-上图-像平常一样就可以了"><a href="#最后-上图-像平常一样就可以了" class="headerlink" title="最后 上图 像平常一样就可以了"></a>最后 上图 像平常一样就可以了</h3><p> <img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuytkmem60j30bw0hot9v.jpg" alt=""><br> <img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fuytlhokokj30y80fc7ae.jpg" alt=""></p>
+<h4 id="最后的最后，我想去成都找一个属于我的小甜甜"><a href="#最后的最后，我想去成都找一个属于我的小甜甜" class="headerlink" title="最后的最后，我想去成都找一个属于我的小甜甜"></a>最后的最后，我想去成都找一个属于我的小甜甜</h4><p><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2201782222,3168036318&amp;fm=173&amp;app=25&amp;f=JPEG?w=274&amp;h=491&amp;s=C281F3075C13C3D836A9ED9E0300E001" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;小甜甜开篇&quot;&gt;&lt;a href=&quot;#小甜甜开篇&quot; class=&quot;headerlink&quot; title=&quot;小甜甜开篇&quot;&gt;&lt;/a&gt;小甜甜开篇&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=12
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>学 vue 之前不来了解下 es6？</title>
