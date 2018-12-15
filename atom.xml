@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-13T06:45:52.844Z</updated>
+  <updated>2018-12-15T11:02:51.309Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2018/12/13/iOS-%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96/"/>
     <id>http://yoursite.com/2018/12/13/iOS-项目依赖/</id>
     <published>2018-12-13T05:52:01.000Z</published>
-    <updated>2018-12-13T06:45:52.844Z</updated>
+    <updated>2018-12-15T11:02:51.309Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1544690808560&amp;di=e744ae0aab733f62617d7d255518996f&amp;imgtype=0&amp;src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farchive%2F272bbcff3895c247e43346431cdca7f4ceb10f3d.jpg" alt=""></p>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>  前言总是废话的，说的一堆有的没的的，不过人生不就是这样吗，兜兜转转，磨磨唧唧；慢慢的得到，慢慢的失去；<br>  时常在想，如果还在杭州，没有换工作回来是一种怎么样的生活。原来我并不聪明，也不睿智。四年前的妖尾终结篇，而今重新开始；<br>  如果人生也能在想停的时候停一下，那多好。</p>
@@ -33,7 +33,7 @@
 <h5 id="3-然后填写项目名，这里用的是Tools，接着就下一步"><a href="#3-然后填写项目名，这里用的是Tools，接着就下一步" class="headerlink" title="3.然后填写项目名，这里用的是Tools，接着就下一步"></a>3.然后填写项目名，这里用的是Tools，接着就下一步</h5><p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fy53c89ktxj30so0ekdgw.jpg" alt=""></p>
 <h5 id="4-这时候注意了，这个就厉害了【把新建的这个-project-拖进到和主项目一个文件夹里，你懂我啥意思吧，不懂？看下图】"><a href="#4-这时候注意了，这个就厉害了【把新建的这个-project-拖进到和主项目一个文件夹里，你懂我啥意思吧，不懂？看下图】" class="headerlink" title="4.这时候注意了，这个就厉害了【把新建的这个 project 拖进到和主项目一个文件夹里，你懂我啥意思吧，不懂？看下图】"></a>4.这时候注意了，这个就厉害了【把新建的这个 project 拖进到和主项目一个文件夹里，你懂我啥意思吧，不懂？看下图】</h5><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy53fkgxqzj30n40fwjtl.jpg" alt=""></p>
 <h5 id="5-选择-addFile-to"><a href="#5-选择-addFile-to" class="headerlink" title="5.选择 addFile to"></a>5.选择 addFile to</h5><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fy53upedi4j30eu0qwkbw.jpg" alt=""></p>
-<h5 id="6-选择xcodeproj"><a href="#6-选择xcodeproj" class="headerlink" title="6.选择xcodeproj"></a>6.选择xcodeproj</h5><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy540porasj30mg0hgmyt.jpg" alt=""></p>
+<h5 id="6-选择xcodeproj"><a href="#6-选择xcodeproj" class="headerlink" title="6.选择xcodeproj"></a>6.选择xcodeproj</h5><p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fy54b6oovzj30nq0dodhb.jpg" alt=""></p>
 <h4 id="然后就这个鬼样子了"><a href="#然后就这个鬼样子了" class="headerlink" title="然后就这个鬼样子了"></a>然后就这个鬼样子了</h4><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy542z0tshj30gs0o8wv9.jpg" alt=""></p>
 <h4 id="还不够，接下来还有几步骤需要做："><a href="#还不够，接下来还有几步骤需要做：" class="headerlink" title="还不够，接下来还有几步骤需要做："></a>还不够，接下来还有几步骤需要做：</h4><pre><code>来到 build phase 里
 </code></pre><p> <img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fy544kewjqj30im0kwt9q.jpg" alt=""></p>
